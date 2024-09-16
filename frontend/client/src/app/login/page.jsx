@@ -1,3 +1,5 @@
+/** @format */
+
 "use client";
 import React, { useState } from "react";
 
@@ -9,7 +11,8 @@ const LogIn = () => {
     setUserDatail({ ...userDatail, [name]: value });
   };
 
-  const handleSubmit = (event) => {
+  const handleClick = async (event) => {
+    await push("/Home");
     event.preventdatail();
     console.log(userDatail);
   };
@@ -31,7 +34,9 @@ const LogIn = () => {
         name="password"
         onChange={handleChange}
       />
-      <button type="submit">Log In</button>
+      <button onClick={handleClick} type="submit">
+        Log In
+      </button>
     </div>
   );
 };

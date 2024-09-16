@@ -1,6 +1,7 @@
+/** @format */
+
 "use client";
 import React from "react";
-
 import { useState } from "react";
 import { useRouter } from "next/navigation";
 import axios from "axios";
@@ -16,12 +17,13 @@ const SignUp = () => {
 
   const handleSubmit = async (event) => {
     event.preventDefault();
-    push("/login");
+    await push("/login");
     console.log(userDatail);
   };
 
   const handleClick = async (event) => {
     event.preventDefault();
+    await push("/login");
     const res = await axios.post("http://localhost:8000/sign-up", {
       userName: userDatail.email,
       password: userDatail.password,

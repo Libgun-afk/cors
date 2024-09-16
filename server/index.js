@@ -1,3 +1,5 @@
+/** @format */
+
 import cors from "cors";
 import express from "express";
 import bcrypt from "bcryptjs";
@@ -29,6 +31,7 @@ app.post("/sign-up", async (req, res) => {
 
   result.users.push({
     userName,
+    password,
     password: hashedPassword,
   });
 
